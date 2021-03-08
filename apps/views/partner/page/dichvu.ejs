@@ -1,7 +1,5 @@
 <div class="col-md-9">
-    <a href="/dich-vu/them-dich-vu" class="btn btn-primary mb-4 mr-3"><i class="fa fa-plus"></i> Thêm dịch vụ</a>
-    <a href="/dich-vu/goi-dich-vu" class="btn btn-danger text-light mb-4 mr-3"><i class="fas fa-table"></i> Gói dịch vụ</a>
-    <a href="/dich-vu/import" class="btn btn-warning text-light mb-4"><i class="fas fa-sign-out-alt"></i> Import</a>
+    <a href="/dich-vu/them" class="btn btn-primary mb-4 mr-3"><i class="fa fa-plus"></i> Thêm dịch vụ</a>
     <div class="card">
         <div class="card-body">
             <table id="example1" class="table table-bordered table-striped">
@@ -9,7 +7,6 @@
                     <tr>
                         <th>#</th>
                         <th>Tên dịch vụ</th>
-                        <th>Ghi chú</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -17,15 +14,11 @@
                     <tr>
                         <td>1</td>
                         <td>Vá lốp</td>
-                        <td>Ghi chú về dịch vụ</td>
                         <td>
-                            <a class="btn btn-success text-light" href="/dich-vu/sua-dich-vu/DV1">
-                                <i class="fas fa-eye"></i>
-                            </a>
-                            <a class="btn btn-secondary" href="/dich-vu/sua-dich-vu/DV1">
+                            <a class="btn btn-secondary" href="/dich-vu/DV1/sua">
                                 <i class="fas fa-edit"></i>
                             </a>
-                            <a class="btn btn-danger" href="/dich-vu/xoa-dich-vu/DV1">
+                            <a class="btn btn-danger" href="/dich-vu/DV1/xoa">
                                 <i class="fas fa-trash"></i>
                             </a>
                         </td>
@@ -54,8 +47,7 @@
         $("#example1").DataTable({
             "responsive": true,
             "lengthChange": false,
-            "autoWidth": false,
-            "buttons": ["copy", "csv", "excel", "pdf", "print"]
+            "autoWidth": false
         }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     });
 </script>

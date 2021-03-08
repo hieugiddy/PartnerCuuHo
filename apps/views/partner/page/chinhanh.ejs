@@ -1,6 +1,5 @@
 <div class="col-md-9">
-    <a href="/chi-nhanh/them-chi-nhanh" class="btn btn-primary mb-4 mr-3"><i class="fa fa-plus"></i> Thêm chi nhánh</a>
-    <a href="/chi-nhanh/import" class="btn btn-warning text-light mb-4"><i class="fas fa-sign-out-alt"></i> Import</a>
+    <a href="/chi-nhanh/them" class="btn btn-primary mb-4 mr-3"><i class="fa fa-plus"></i> Thêm chi nhánh</a>
     <div class="card">
         <div class="card-body">
             <table id="example1" class="table table-bordered table-striped">
@@ -9,7 +8,6 @@
                         <th>#</th>
                         <th>Tên chi nhánh</th>
                         <th>Địa chỉ</th>
-                        <th>Trạng thái</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -18,12 +16,11 @@
                         <td>1</td>
                         <td>Chi nhánh 1</td>
                         <td>02 Thanh Sơn, Thanh Bình, Hải Châu, Đà Nẵng</td>
-                        <td><span class="badge bg-success">Đang hoạt động</span></td>
                         <td>
-                            <a class="btn btn-secondary" href="/chi-nhanh/sua-chi-nhanh/CN1">
+                            <a class="btn btn-secondary" href="/chi-nhanh/CN1/sua">
                                 <i class="fas fa-edit"></i>
                             </a>
-                            <a class="btn btn-danger" href="/chi-nhanh/xoa-chi-nhanh/CN1">
+                            <a class="btn btn-danger" href="/chi-nhanh/CN1/xoa">
                                 <i class="fas fa-trash"></i>
                             </a>
                         </td>
@@ -32,12 +29,11 @@
                         <td>2</td>
                         <td>Chi nhánh 1</td>
                         <td>02 Thanh Sơn, Thanh Bình, Hải Châu, Đà Nẵng</td>
-                        <td><span class="badge bg-primary">Chờ phê duyệt</span></td>
                         <td>
-                            <a class="btn btn-secondary" href="/chi-nhanh/sua-chi-nhanh/CN1">
+                            <a class="btn btn-secondary" href="/chi-nhanh/CN1/sua">
                                 <i class="fas fa-edit"></i>
                             </a>
-                            <a class="btn btn-danger" href="/chi-nhanh/xoa-chi-nhanh/CN2">
+                            <a class="btn btn-danger" href="/chi-nhanh/CN1/xoa">
                                 <i class="fas fa-trash"></i>
                             </a>
                         </td>
@@ -46,12 +42,11 @@
                         <td>3</td>
                         <td>Chi nhánh 1</td>
                         <td>02 Thanh Sơn, Thanh Bình, Hải Châu, Đà Nẵng</td>
-                        <td><span class="badge bg-danger">Bị từ chối</span></td>
                         <td>
-                            <a class="btn btn-secondary" href="/chi-nhanh/sua-chi-nhanh/CN3">
+                            <a class="btn btn-secondary" href="/chi-nhanh/CN1/sua">
                                 <i class="fas fa-edit"></i>
                             </a>
-                            <a class="btn btn-danger" href="/chi-nhanh/xoa-chi-nhanh/CN3">
+                            <a class="btn btn-danger" href="/chi-nhanh/CN1/xoa">
                                 <i class="fas fa-trash"></i>
                             </a>
                         </td>
@@ -81,8 +76,7 @@
         $("#example1").DataTable({
             "responsive": true,
             "lengthChange": false,
-            "autoWidth": false,
-            "buttons": ["copy", "csv", "excel", "pdf", "print"]
+            "autoWidth": false
         }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     });
 </script>

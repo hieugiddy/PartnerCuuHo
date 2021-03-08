@@ -73,7 +73,7 @@ router.route("/chi-nhanh")
                 data: {
                     page: "chinhanh",
                     web_title: web_title,
-                    page_name: "Quản lí chi nhánh",
+                    page_name: "Chi nhánh",
                     app_name: app_name,
                     logo: logo,
                     favicon: favicon,
@@ -89,7 +89,7 @@ router.route("/chi-nhanh")
                             path: "/"
                         },
                         {
-                            name: "Quản lí chi nhánh",
+                            name: "Chi nhánh",
                             path: "/chi-nhanh"
                         }
                     ]
@@ -98,7 +98,7 @@ router.route("/chi-nhanh")
         else
             res.redirect("/account");
     });
-router.route("/chi-nhanh/them-chi-nhanh")
+router.route("/chi-nhanh/them")
     .get(function(req, res) {
         if (ac_helpers.kiemTraDangNhap(req))
             res.render("partner", {
@@ -121,7 +121,7 @@ router.route("/chi-nhanh/them-chi-nhanh")
                             path: "/"
                         },
                         {
-                            name: "Quản lí chi nhánh",
+                            name: "Chi nhánh",
                             path: "/chi-nhanh"
                         },
                         {
@@ -134,14 +134,14 @@ router.route("/chi-nhanh/them-chi-nhanh")
         else
             res.redirect("/account");
     });
-router.route("/chi-nhanh/sua-chi-nhanh/:id")
+router.route("/chi-nhanh/:id/sua")
     .get(function(req, res) {
         if (ac_helpers.kiemTraDangNhap(req))
             res.render("partner", {
                 data: {
                     page: "suachinhanh",
                     web_title: web_title,
-                    page_name: "Sửa chi nhánh mới",
+                    page_name: "Sửa chi nhánh",
                     app_name: app_name,
                     logo: logo,
                     favicon: favicon,
@@ -157,7 +157,7 @@ router.route("/chi-nhanh/sua-chi-nhanh/:id")
                             path: "/"
                         },
                         {
-                            name: "Quản lí chi nhánh",
+                            name: "Chi nhánh",
                             path: "/chi-nhanh"
                         },
                         {
@@ -171,7 +171,7 @@ router.route("/chi-nhanh/sua-chi-nhanh/:id")
         else
             res.redirect("/account");
     });
-router.route("/chi-nhanh/xoa-chi-nhanh/:id")
+router.route("/chi-nhanh/:id/xoa")
     .get(function(req, res) {
         if (ac_helpers.kiemTraDangNhap(req))
             res.json({
@@ -188,7 +188,7 @@ router.route("/dich-vu")
                 data: {
                     page: "dichvu",
                     web_title: web_title,
-                    page_name: "Quản lí dịch vụ",
+                    page_name: "Dịch vụ",
                     app_name: app_name,
                     logo: logo,
                     favicon: favicon,
@@ -204,7 +204,7 @@ router.route("/dich-vu")
                             path: "/"
                         },
                         {
-                            name: "Quản lí dịch vụ",
+                            name: "Dịch vụ",
                             path: "/dich-vu"
                         }
                     ]
@@ -213,7 +213,7 @@ router.route("/dich-vu")
         else
             res.redirect("/account");
     });
-router.route("/dich-vu/them-dich-vu")
+router.route("/dich-vu/them")
     .get(function(req, res) {
         if (ac_helpers.kiemTraDangNhap(req))
             res.render("partner", {
@@ -236,7 +236,7 @@ router.route("/dich-vu/them-dich-vu")
                             path: "/"
                         },
                         {
-                            name: "Quản lí dịch vụ",
+                            name: "Dịch vụ",
                             path: "/dich-vu"
                         },
                         {
@@ -249,14 +249,14 @@ router.route("/dich-vu/them-dich-vu")
         else
             res.redirect("/account");
     });
-router.route("/dich-vu/sua-dich-vu/:id")
+router.route("/dich-vu/:id/sua")
     .get(function(req, res) {
         if (ac_helpers.kiemTraDangNhap(req))
             res.render("partner", {
                 data: {
                     page: "suadichvu",
                     web_title: web_title,
-                    page_name: "Sửa dịch vụ mới",
+                    page_name: "Sửa dịch vụ",
                     app_name: app_name,
                     logo: logo,
                     favicon: favicon,
@@ -272,7 +272,7 @@ router.route("/dich-vu/sua-dich-vu/:id")
                             path: "/"
                         },
                         {
-                            name: "Quản lí dịch vụ",
+                            name: "Dịch vụ",
                             path: "/dich-vu"
                         },
                         {
@@ -286,7 +286,121 @@ router.route("/dich-vu/sua-dich-vu/:id")
         else
             res.redirect("/account");
     });
-router.route("/dich-vu/xoa-dich-vu/:id")
+router.route("/dich-vu/:id/xoa")
+    .get(function(req, res) {
+        if (ac_helpers.kiemTraDangNhap(req))
+            res.json({
+                data: "Xóa " + req.params.id + " thành công"
+            });
+        else
+            res.redirect("/account");
+    });
+router.route("/uu-dai")
+    .get(function(req, res) {
+        if (ac_helpers.kiemTraDangNhap(req))
+            res.render("partner", {
+                data: {
+                    page: "uudai",
+                    web_title: web_title,
+                    page_name: "Ưu đãi",
+                    app_name: app_name,
+                    logo: logo,
+                    favicon: favicon,
+                    decription: decription,
+                    year: date.getFullYear(),
+                    base_url: base_url,
+                    username: ac_helpers.getSessionUser(req).username,
+                    hoten: ac_helpers.getSessionUser(req).hoten,
+                    avatar: ac_helpers.getSessionUser(req).avatar,
+                    menu: menu,
+                    breadcrumb: [{
+                            name: "Home",
+                            path: "/"
+                        },
+                        {
+                            name: "Ưu đãi",
+                            path: "/uu-dai"
+                        }
+                    ]
+                }
+            });
+        else
+            res.redirect("/account");
+    });
+router.route("/uu-dai/them")
+    .get(function(req, res) {
+        if (ac_helpers.kiemTraDangNhap(req))
+            res.render("partner", {
+                data: {
+                    page: "themuudai",
+                    web_title: web_title,
+                    page_name: "Thêm ưu đãi mới",
+                    app_name: app_name,
+                    logo: logo,
+                    favicon: favicon,
+                    decription: decription,
+                    year: date.getFullYear(),
+                    base_url: base_url,
+                    username: ac_helpers.getSessionUser(req).username,
+                    hoten: ac_helpers.getSessionUser(req).hoten,
+                    avatar: ac_helpers.getSessionUser(req).avatar,
+                    menu: menu,
+                    breadcrumb: [{
+                            name: "Home",
+                            path: "/"
+                        },
+                        {
+                            name: "Ưu đãi",
+                            path: "/uu-dai"
+                        },
+                        {
+                            name: "Thêm ưu đãi",
+                            path: "/"
+                        }
+                    ]
+                }
+            });
+        else
+            res.redirect("/account");
+    });
+router.route("/uu-dai/:id/sua")
+    .get(function(req, res) {
+        if (ac_helpers.kiemTraDangNhap(req))
+            res.render("partner", {
+                data: {
+                    page: "suauudai",
+                    web_title: web_title,
+                    page_name: "Sửa ưu đãi",
+                    app_name: app_name,
+                    logo: logo,
+                    favicon: favicon,
+                    decription: decription,
+                    year: date.getFullYear(),
+                    base_url: base_url,
+                    username: ac_helpers.getSessionUser(req).username,
+                    hoten: ac_helpers.getSessionUser(req).hoten,
+                    avatar: ac_helpers.getSessionUser(req).avatar,
+                    menu: menu,
+                    breadcrumb: [{
+                            name: "Home",
+                            path: "/"
+                        },
+                        {
+                            name: "Ưu đãi",
+                            path: "/uu-dai"
+                        },
+                        {
+                            name: "Sửa ưu đãi",
+                            path: "/"
+                        }
+                    ],
+                    id: req.params.id
+                }
+            });
+        else
+            res.redirect("/account");
+    });
+router.route("/uu-dai/:id/xoa")
     .get(function(req, res) {
         if (ac_helpers.kiemTraDangNhap(req))
             res.json({
